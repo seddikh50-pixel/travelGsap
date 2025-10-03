@@ -37,15 +37,21 @@ const Images = () => {
         });
 
 
-
+ islandTimeline.from('.imageCon', {
+            
+            duration: 1,
+            ease: "power1",
+            x : (index)=> index % 2=== 0 ? -100 : 100            // transformOrigin: "top center"
+        })
 
 
         islandTimeline.from('.island', {
             height: 0,
-            duration: 1,
+            duration: 2,
             ease: "power1",
+           
             // transformOrigin: "top center"
-        })
+        },"+=2")
 
     })
     return (
@@ -53,11 +59,11 @@ const Images = () => {
             <h1 className='islandText text-center z-1 text-[15vh] absolute left-74 top-0 text-black'>Visit Maldives</h1>
             <div className='relative w-full h-full flex justify-evenly items-center'>
 
-                <div className='relative w-120 h-120 mt-10 bg-black '>
+                <div className='imageCon relative w-120 h-120 mt-10 bg-black '>
                     <Image src={"/image1.webp"} alt='image' fill className='island object-cover' />
                 </div>
 
-                <div className='relative  w-120 h-120 mt-10 bg-black   '>
+                <div className='imageCon relative  w-120 h-120 mt-10 bg-black   '>
                     <Image src={"/image2.webp"} alt='image' className='island object-cover' fill />
                 </div>
             </div>
