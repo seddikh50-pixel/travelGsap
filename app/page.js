@@ -71,6 +71,7 @@ export default function Home() {
         <Hero />
         <Borders />
         <Images/> 
+        <div className="w-full h-screen bg-amber-400"></div>
 
 
       </div>

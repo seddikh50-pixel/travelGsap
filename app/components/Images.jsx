@@ -12,7 +12,7 @@ gsap.registerPlugin(SplitText)
 const Images = () => {
     useGSAP(() => {
         const splitIsland = SplitText.create('.islandText', { type: "chars" })
- 
+
 
         const islandTimeline = gsap.timeline({
             scrollTrigger: {
@@ -24,24 +24,23 @@ const Images = () => {
 
             }
         })
-        
 
-            islandTimeline.from(splitIsland.chars, {
+
+        islandTimeline.from(splitIsland.chars, {
             duration: 1,
-            color : "#dddddd",
+            color: "#dddddd",
             stagger: {
                 // from: "random",
                 each: 0.3
             },
-        
+
         });
 
 
- islandTimeline.from('.imageCon', {
-            
+        islandTimeline.from('.imageCon', {
             duration: 1,
             ease: "power1",
-            x : (index)=> index % 2=== 0 ? -100 : 100            // transformOrigin: "top center"
+            x: (index) => index % 2 === 0 ? -100 : 100            // transformOrigin: "top center"
         })
 
 
@@ -49,23 +48,44 @@ const Images = () => {
             height: 0,
             duration: 2,
             ease: "power1",
-           
-            // transformOrigin: "top center"
-        },"+=2")
 
+            // transformOrigin: "top center"
+        })
+
+       
+        islandTimeline.from('.island1', {
+            left:(index)=> index % 2 === 0 ? "100%" : "-100%",
+            duration: 2,
+            ease: "power1",
+
+            // transformOrigin: "top center"
+        })
+
+
+        // islandTimeline.to('.islandContainer',{
+        //     scaleY : 0,
+        //     ease : "power1",
+        //     duration : 1,
+        //     transformOrigin :"top center"
+        // })
     })
     return (
         <div className='islandContainer w-full h-screen '>
             <h1 className='islandText text-center z-1 text-[15vh] absolute left-74 top-0 text-black'>Visit Maldives</h1>
-            <div className='relative w-full h-full flex justify-evenly items-center'>
+            <div className='relative w-full h-full flex justify-evenly items-center gap-4 px-5'>
 
-                <div className='imageCon relative w-120 h-120 mt-10 bg-black '>
+                <div className='imageCon relative  flex-1 h-120 mt-20 bg-black overflow-hidden shadow-xl/40 rounded-tl-2xl  '>
                     <Image src={"/image1.webp"} alt='image' fill className='island object-cover' />
+                    <Image src={"/image3.webp"} alt='image' fill className='island1 object-cover' />
                 </div>
 
-                <div className='imageCon relative  w-120 h-120 mt-10 bg-black   '>
+                <div className='imageCon relative   flex-1 h-120 mt-20 bg-black overflow-hidden shadow-xl/40 rounded-tr-2xl     '>
                     <Image src={"/image2.webp"} alt='image' className='island object-cover' fill />
+                    <Image src={"/image4.webp"} alt='image' className='island1 object-cover' fill />
                 </div>
+
+
+
             </div>
 
         </div>
