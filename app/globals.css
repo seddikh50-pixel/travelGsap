@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+body {
+  font-family: 'SUSE Mono', monospace;
+}
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* .mask2{
+  -webkit-mask-image: url("/Logo.webp");
+  mask-image: url("/Logo.webp");
+  mask-repeat: no-repeat;    
+  mask-position: center;
+
+  
+}
+ */
+
+/* body {
+  height: 300vh;
+} */
+
+
+
