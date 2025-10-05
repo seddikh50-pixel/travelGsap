@@ -15,12 +15,12 @@ const Hero = () => {
     useGSAP(() => {
 
         const texts = document.querySelectorAll('.text')
-        gsap.from('.sideContainer', {
-            duration: 2,
-            ease: "power1",
-            scale: 0.5,
-            delay: 4
-        })
+        // gsap.from('.sideContainer', {
+        //     duration: 2,
+        //     ease: "power1",
+        //     scale: 0.5,
+        //     delay: 4
+        // })
 
 
         const sideTimeline = gsap.timeline({
@@ -33,11 +33,11 @@ const Hero = () => {
 
             }
         })
-        sideTimeline.to('.side', {
-            transform: "translateZ(690px)",
-            duration: 2,
-            x: -150
-        })
+        // sideTimeline.to('.side', {
+        //     transform: "translateZ(690px)",
+        //     duration: 2,
+        //     x: -150
+        // })
 
 
         sideTimeline.from(".textWrapper", {
