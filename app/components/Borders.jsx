@@ -1,21 +1,50 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { SplitText } from 'gsap/SplitText'
 import Image from 'next/image';
+import { useMediaQuery } from 'react-responsive';
 gsap.registerPlugin(SplitText)
+
 
 
 
 const Borders = () => {
 
+
+
+    const [isMobile, setIsMobile] = useState(false);
+
+
     const travels = ["/travels/travel1.webp", "/travels/travel2.webp", "/travels/travel3.webp", "/travels/travel4.webp", "/travels/travel5.webp"]
+
+    useEffect(() => {
+
+        if (window.innerWidth <= 500) {
+            setIsMobile(true);
+            gsap.to('.singleImage', {
+                // transform: "translateZ(-2000px)",
+                x: 1000,
+                transformOrigin: "left center",
+                duration: 1,
+                ease: "power1",
+                onComplete : ()=> console.log("com")
+
+            })
+
+        }
+
+    }, []);
+
+
     useGSAP(() => {
+
         const splitBorder = SplitText.create('.borders', { type: "chars" })
 
-      
+
 
 
         const borderTimeline = gsap.timeline({
@@ -23,11 +52,18 @@ const Borders = () => {
                 trigger: ".borderContainer",
                 start: "top top",
                 end: "bottom top",
-                scrub: true,
+                scrub: 2,
                 pin: true,
 
             }
         })
+       
+
+        borderTimeline.to('.logo',{
+            color : "black",
+            ease : "power1"
+        })
+       
 
 
         gsap.from(splitBorder.chars, {
@@ -45,13 +81,33 @@ const Borders = () => {
                 scrub: true,
             }
         });
-        borderTimeline.from('.travel', {
-            height: 0,
+
+        borderTimeline.to('.singleImage', {
+            transform: "translateZ(0px)",
+
+            transformOrigin: "left center",
             duration: 1,
             ease: "power1",
-            stagger: 0.3,
-          
+
         })
+
+
+        if (!isMobile) {
+            borderTimeline.from('.travelImage', {
+                transform: "translateZ(-2000px)",
+                rotateY: 45,
+                transformOrigin: "left center",
+                duration: 1,
+                ease: "power1",
+                stagger: 0.3,
+
+            })
+
+        }
+
+
+
+
 
 
 
@@ -59,22 +115,30 @@ const Borders = () => {
     return (
         <div className='borderContainer h-screen w-screen  '>
 
-            <div className='travels  w-full h-full flex'>
-                {travels.map((img, index) => (
-                    <div key={index} className='relative flex-1 w-full h-full '>
-                        <Image
+            <div className='travels relative  w-full h-full flex' >
 
-                            src={img}
-                            alt={`travel ${index + 1}`}
-                            fill
-                            sizes="(max-width: 768px) 100vw, 20vw" // تقدير: 5 صور جنب بعض = 20% لكل صورة
-                            className="travel object-cover"
-                        />
-                    </div>
-                ))}
+                {
+                    isMobile ?
+                        <div className=' relative h-full w-full' style={{ perspective: "2000px" }}>
+                            <Image src={"/yellowCar.webp"} fill className="singleImage  object-cover" alt='car' />
+                        </div>
+                        :
+                        travels.map((img, index) => (
+                            <div key={index} className='relative flex-1 w-full h-full' style={{ perspective: "2000px" }}>
+                                <Image
+
+                                    src={img}
+                                    alt={`travel ${index + 1}`}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 20vw"
+                                    className="travelImage object-cover"
+                                />
+                            </div>
+                        ))
+                }
             </div>
             <div>
-                <h1 className='borders text-shadow-lg/30 text-shadow-amber-100 text-[15vh] absolute z-1 s left-30 top-54 text-black uppercase '>world without borders</h1>
+                <h1 className='borders text-shadow-lg/30 text-shadow-black xl:text-[15vh] text-[4vh] absolute z-1 s xl:left-30 left-8 xl:top-54 top-80 text-amber-100 uppercase '>world without borders</h1>
             </div>
 
         </div>

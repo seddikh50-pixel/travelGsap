@@ -21,6 +21,14 @@ body {
 /* body {
   height: 300vh;
 } */
+html, body {
+  cursor: none;
+}
+
+.curve .curveImage {
+ 
+  clip-path: ellipse(100% 85% at 50% 100%); 
+}
 
 
 

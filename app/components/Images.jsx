@@ -48,8 +48,6 @@ const Images = () => {
             height: 0,
             duration: 2,
             ease: "power1",
-
-            // transformOrigin: "top center"
         })
 
        
@@ -57,29 +55,31 @@ const Images = () => {
             left:(index)=> index % 2 === 0 ? "100%" : "-100%",
             duration: 2,
             ease: "power1",
-
-            // transformOrigin: "top center"
         })
+          
+        islandTimeline.from('.thirdOne', {
+            y:700,
+            duration: 2,
+            ease: "power1",
+        })
+        
 
 
-        // islandTimeline.to('.islandContainer',{
-        //     scaleY : 0,
-        //     ease : "power1",
-        //     duration : 1,
-        //     transformOrigin :"top center"
-        // })
+     
     })
     return (
         <div className='islandContainer w-full h-screen '>
-            <h1 className='islandText text-center z-1 text-[15vh] absolute left-74 top-0 text-black'>Visit Maldives</h1>
-            <div className='relative w-full h-full flex justify-evenly items-center gap-4 px-5'>
-
-                <div className='imageCon relative  flex-1 h-120 mt-20 bg-black overflow-hidden shadow-xl/40 rounded-tl-2xl  '>
+            <h1 className='islandText text-center z-1 xl:text-[15vh] text-[6vh]  absolute xl:left-74 left-6 top-20 text-black'>Visit Maldives</h1>
+            <div className='relative w-full h-full flex xl:flex-row  justify-evenly items-center gap-4 px-5'>
+                    <div className='thirdOne absolute xl:h-120 xl:w-120 w-64 h-64  z-20 bottom-20 shadow-xl/40 rounded-t-2xl overflow-hidden'>
+                        <Image src={"/image5.webp"} alt='image' fill className=' object-cover' />
+                    </div>
+                <div className='imageCon relative  flex-1 xl:h-120 h-60 mt-20 bg-black/10 overflow-hidden shadow-xl/40 rounded-tr-sm xl:rounded-tr-2xl  '>
                     <Image src={"/image1.webp"} alt='image' fill className='island object-cover' />
                     <Image src={"/image3.webp"} alt='image' fill className='island1 object-cover' />
                 </div>
 
-                <div className='imageCon relative   flex-1 h-120 mt-20 bg-black overflow-hidden shadow-xl/40 rounded-tr-2xl     '>
+                <div className='imageCon relative   flex-1 xl:h-120 h-60 mt-20 bg-black/10 overflow-hidden shadow-xl/40 rounded-tl-sm xl:rounded-tl-2xl      '>
                     <Image src={"/image2.webp"} alt='image' className='island object-cover' fill />
                     <Image src={"/image4.webp"} alt='image' className='island1 object-cover' fill />
                 </div>

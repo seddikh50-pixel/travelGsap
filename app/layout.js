@@ -1,3 +1,4 @@
+
 // import { SUSE_Mono } from 'next/font/google'
 import "./globals.css";
 
@@ -21,6 +22,8 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className=" ">
+        <h1 className="fixed top-3 left-5 text-4xl z-50 text-white font-bold logo">TRAVEL.</h1>
+
 
         {children}
       </body>
