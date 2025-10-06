@@ -9,7 +9,9 @@ import Borders from "./components/Borders";
 import Images from "./components/Images";
 import { SplitText } from 'gsap/SplitText'
 import { useEffect, useRef, useState } from "react";
-
+import { RxCross2 } from "react-icons/rx";
+import Link from "next/link";
+import Header from "./components/Header";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 
@@ -24,16 +26,14 @@ export default function Home() {
    
     function mouseMove(e) {
       gsap.to(circleRef.current, {
-        x: e.clientX,
+        x: e.clientX - 80,
         y: e.clientY,
         duration: 0.3,   // سرعة الحركة
         ease: "power2.out"
       });
 
-      const { width, height } = bigCircleRef.current.getBoundingClientRect();
-      console.log(width , height)
        gsap.to(bigCircleRef.current, {
-        x: e.clientX - 20 ,
+        x: e.clientX - 100 ,
         y: e.clientY - 20 ,
         duration: 0.3,
         delay : 0.1,   // سرعة الحركة
@@ -122,6 +122,28 @@ export default function Home() {
   return (
 
     <div id="smooth-wrapper" >
+         <div className='mobileMenu absolute z-100 left-full   w-full h-screen bg-white flex flex-col'>
+          <div className="absolute right-5 top-5 z-50 ">
+            <RxCross2 className="text-black text-6xl" onClick={()=>{
+              gsap.to('.mobileMenu',{
+                x : "100%"
+              })
+            }} />
+
+          </div>
+          <Link href={"/"} className='link group relative text-black bg-white overflow-hidden  '>
+            Work
+          </Link>
+          <Link href={"/"} className='link group relative text-black bg-white overflow-hidden  '>
+            Agency
+          </Link>
+          <Link href={"/"} className='link group relative text-black bg-white overflow-hidden  '>
+            Services
+          </Link>
+          <Link href={"/"} className='link group relative text-black bg-white overflow-hidden  '>
+            Let's Talk
+          </Link>
+        </div>
       <div ref={circleRef} className="smallCircle fixed w-3 h-3 left-20 rounded-full bg-black z-100 top-0"></div>
         <div ref={bigCircleRef}  className="bigCircle absolute rounded-full w-[50px] h-[50px] left-20  border-1  border-black z-49 top-0" ></div>
         
@@ -145,7 +167,7 @@ export default function Home() {
         </div>
 
       <div id="smooth-content" className="w-screen relative  " >
-
+          <Header />
         <Hero />
         <Borders />
         <Images />

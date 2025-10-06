@@ -1,6 +1,13 @@
 
 // import { SUSE_Mono } from 'next/font/google'
+import Link from "next/link";
+import Header from "./components/Header";
 import "./globals.css";
+
+
+
+
+
 
 // const suseMono = SUSE_Mono({
 //   subsets: ['latin'],  // أو أي subset الخط يدعمه
@@ -22,9 +29,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className=" ">
-        <h1 className="fixed top-3 left-5 text-4xl z-50 text-white font-bold logo">TRAVEL.</h1>
-
-
+      
         {children}
       </body>
     </html>
