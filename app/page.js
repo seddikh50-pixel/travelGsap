@@ -28,17 +28,18 @@ export default function Home() {
       gsap.to(circleRef.current, {
         x: e.clientX - 80,
         y: e.clientY,
-        duration: 0.3,   // سرعة الحركة
-        ease: "power2.out"
+        duration: 0.1,   // سرعة الحركة
+        ease: "power2.out",
+        delay : 0.1
       });
 
        gsap.to(bigCircleRef.current, {
         x: e.clientX - 100 ,
         y: e.clientY - 20 ,
-        duration: 0.3,
-        delay : 0.1,   // سرعة الحركة
-        ease: "power2.out"
-      });
+        duration: 0.1,   // سرعة الحركة
+        ease: "power2.out",
+        delay : 0.1
+      },"<");
     }
     addEventListener("mousemove", mouseMove)
 
@@ -122,7 +123,7 @@ export default function Home() {
   return (
 
     <div id="smooth-wrapper" >
-         <div className='mobileMenu absolute z-100 left-full   w-full h-screen bg-white flex flex-col'>
+         <div className='mobileMenu absolute z-100 left-full p-10 pt-20   w-full h-screen bg-white flex flex-col'>
           <div className="absolute right-5 top-5 z-50 ">
             <RxCross2 className="text-black text-6xl" onClick={()=>{
               gsap.to('.mobileMenu',{
@@ -131,21 +132,21 @@ export default function Home() {
             }} />
 
           </div>
-          <Link href={"/"} className='link group relative text-black bg-white overflow-hidden  '>
+          <Link href={"/"} className='link cursor-none group relative text-[5vh] text-black  bg-white overflow-hidden  '>
             Work
           </Link>
-          <Link href={"/"} className='link group relative text-black bg-white overflow-hidden  '>
+          <Link href={"/"} className='link group cursor-none relative text-[5vh] text-black bg-white overflow-hidden  '>
             Agency
           </Link>
-          <Link href={"/"} className='link group relative text-black bg-white overflow-hidden  '>
+          <Link href={"/"} className='link group relative text-[5vh] text-black bg-white overflow-hidden  '>
             Services
           </Link>
-          <Link href={"/"} className='link group relative text-black bg-white overflow-hidden  '>
+          <Link href={"/"} className='link group relative text-[5vh] text-black bg-white overflow-hidden  '>
             Let's Talk
           </Link>
         </div>
-      <div ref={circleRef} className="smallCircle fixed w-3 h-3 left-20 rounded-full bg-black z-100 top-0"></div>
-        <div ref={bigCircleRef}  className="bigCircle absolute rounded-full w-[50px] h-[50px] left-20  border-1  border-black z-49 top-0" ></div>
+      <div ref={circleRef} className="smallCircle pointer-events-none fixed w-3 h-3 left-20 xl:block 2xl:block lg:block md:hidden cursor-none sm:hidden xm:hidden m:hidden rounded-full bg-black z-100 top-0"></div>
+        <div ref={bigCircleRef}  className="bigCircle pointer-events-none absolute rounded-full xl:block 2xl:block lg:block md:hidden sm:hidden cursor-none xm:hidden m:hidden w-[50px] h-[50px] left-20  border-1  border-black z-49 top-0" ></div>
         
         <div className="anima1  w-full h-[100vh] bg-black overflow-hidden fixed top-0 left-0   z-50">
           <h1 className="travel absolute xl:left-32 left-15  uppercase xl:top-32 top-64 xl:text-[50vh] md:text-[15vh] md:left-30 md:top-100 m:text-[10vh] font-bold text-white">travel</h1>
