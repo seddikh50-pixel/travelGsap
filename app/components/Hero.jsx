@@ -33,11 +33,11 @@ const Hero = () => {
 
             }
         })
-        // sideTimeline.to('.side', {
-        //     transform: "translateZ(690px)",
-        //     duration: 2,
-        //     x: -150
-        // })
+        sideTimeline.to('.side', {
+            transform: "translateZ(690px)",
+            duration: 2,
+            x: -150
+        })
 
 
         sideTimeline.from(".textWrapper", {
@@ -86,7 +86,7 @@ const Hero = () => {
         <div className='hero relative w-full h-screen'>
             <div className=' relative w-full h-full flex justify-center items-center'>
                 <div className='sideContainer absolute flex justify-center items-center h-full w-full ' style={{ perspective: "700px" }}>
-                    <Image src={"/side.png"} className='side object-cover absolute z-50 translate-z-0' alt='side' fill />
+                    <Image src={"/side.png"} className='side xl:object-center object-cover absolute z-50 translate-z-0' alt='side' fill />
                 </div>
                 <video src={"/clouds.mp4"} className='object-cover w-full h-full' alt='side' loop autoPlay muted />
             </div>

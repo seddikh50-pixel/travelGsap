@@ -23,7 +23,7 @@ const Borders = () => {
 
     useEffect(() => {
 
-        if (window.innerWidth <= 500) {
+        if (window.innerWidth <= 1024) {
             setIsMobile(true);
             gsap.to('.singleImage', {
                 // transform: "translateZ(-2000px)",
@@ -138,7 +138,7 @@ const Borders = () => {
                 }
             </div>
             <div>
-                <h1 className='borders text-shadow-lg/30 text-shadow-black xl:text-[15vh] text-[4vh] absolute z-1 s xl:left-30 left-8 xl:top-54 top-80 text-amber-100 uppercase '>world without borders</h1>
+                <h1 className='borders text-shadow-lg/30 text-shadow-black xl:text-[15vh] m:text-[2vh] m:left-18 xm:text-[3vh] xm:left-10 md:text-[5vh] md:left-11 lg:text-[4.5vh] lg:left-20 absolute z-1 s xl:left-30 left-8 xl:top-54 top-80 text-amber-100 uppercase '>world without borders</h1>
             </div>
 
         </div>

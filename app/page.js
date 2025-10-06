@@ -60,7 +60,7 @@ export default function Home() {
 
     travelTimeline.from(splitTravel.chars, {
 
-      duration: 0.5,
+      duration: 1,
       scaleY: 2,
 
       stagger: {
@@ -123,28 +123,29 @@ export default function Home() {
 
     <div id="smooth-wrapper" >
       <div ref={circleRef} className="smallCircle fixed w-3 h-3 left-20 rounded-full bg-black z-100 top-0"></div>
-        <div ref={bigCircleRef}  className="bigCircle absolute rounded-full w-[50px] h-[50px] left-20  border  border-black z-49 top-0" ></div>
+        <div ref={bigCircleRef}  className="bigCircle absolute rounded-full w-[50px] h-[50px] left-20  border-1  border-black z-49 top-0" ></div>
+        
+        <div className="anima1  w-full h-[100vh] bg-black overflow-hidden fixed top-0 left-0   z-50">
+          <h1 className="travel absolute xl:left-32 left-15  uppercase xl:top-32 top-64 xl:text-[50vh] md:text-[15vh] md:left-30 md:top-100 m:text-[10vh] font-bold text-white">travel</h1>
+          <div className="w-20 h-10 absolute bottom-5 right-5 z-50  flex ">
+            <div className="bar1 bg-white flex-1 h-full w-full"></div>
+            <div className="bar1 bg-white flex-1 h-full w-full"></div>
+            <div className="bar1 bg-white flex-1 h-full w-full"></div>
+            <div className="bar1 bg-white flex-1 h-full w-full"></div>
+          </div>
+        </div>
+        <div className="anima  w-full h-[100vh] bg-white overflow-hidden fixed top-0 left-0  z-49">
+          <h1 className="travel1 absolute xl:left-32 left-15 uppercase xl:top-32 top-64 xl:text-[50vh] md:text-[15vh] md:left-30 md:top-100 m:text-[10vh]   m:text-[10vh font-bold">travel</h1>
+          <div className="w-20 h-10 absolute bottom-5 right-5 z-50  flex ">
+            <div className="bar bg-black flex-1 h-full w-full"></div>
+            <div className="bar bg-black flex-1 h-full w-full"></div>
+            <div className="bar bg-black flex-1 h-full w-full"></div>
+            <div className="bar bg-black flex-1 h-full w-full"></div>
+          </div>
+        </div>
 
       <div id="smooth-content" className="w-screen relative  " >
 
-        <div className="anima1  w-full h-[100vh] bg-black overflow-hidden absolute  z-50">
-          <h1 className="travel absolute xl:left-32 left-15  uppercase xl:top-32 top-64 xl:text-[50vh] text-[10vh] font-bold text-white">travel</h1>
-          <div className="w-20 h-10 absolute bottom-5 right-5 z-50  flex ">
-            <div className="bar1 bg-white flex-1 h-full w-full"></div>
-            <div className="bar1 bg-white flex-1 h-full w-full"></div>
-            <div className="bar1 bg-white flex-1 h-full w-full"></div>
-            <div className="bar1 bg-white flex-1 h-full w-full"></div>
-          </div>
-        </div>
-        <div className="anima  w-full h-[100vh] bg-white overflow-hidden absolute  z-49">
-          <h1 className="travel1 absolute xl:left-32 left-15 uppercase xl:top-32 top-64 xl:text-[50vh] text-[10vh] font-bold">travel</h1>
-          <div className="w-20 h-10 absolute bottom-5 right-5 z-50  flex ">
-            <div className="bar bg-black flex-1 h-full w-full"></div>
-            <div className="bar bg-black flex-1 h-full w-full"></div>
-            <div className="bar bg-black flex-1 h-full w-full"></div>
-            <div className="bar bg-black flex-1 h-full w-full"></div>
-          </div>
-        </div>
         <Hero />
         <Borders />
         <Images />
