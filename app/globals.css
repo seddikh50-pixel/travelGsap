@@ -68,4 +68,5 @@ body {
   --breakpoint-ml: 900px;
   --breakpoint-xl: 1100px;
   --breakpoint-2xl: 1300px;
+  --breakpoint-3xl: 1500px;
 }

@@ -113,9 +113,9 @@ const Borders = () => {
 
     })
     return (
-        <div className='borderContainer h-screen w-screen  '>
+        <div className='borderContainer h-screen w-screen flex justify-center items-center '>
 
-            <div className='travels relative  w-full h-full flex' >
+            <div className='travels absolute  w-full h-full flex' >
 
                 {
                     isMobile ?
@@ -137,8 +137,9 @@ const Borders = () => {
                         ))
                 }
             </div>
-            <div>
-                <h1 className='borders text-shadow-lg/30 text-shadow-black xl:text-[15vh] m:text-[2vh] m:left-18 xm:text-[3vh] xm:left-10 md:text-[5vh] md:left-11 lg:text-[4.5vh] lg:left-20 absolute z-1 s xl:left-30 left-8 xl:top-54 top-80 text-amber-100 uppercase '>world without borders</h1>
+            <div className=''>
+              
+                <h1 className='borders  -translate-x-1/2 -translate-y-full whitespace-nowrap text-shadow-lg/30 text-shadow-black xl:text-[8vh] ml:text-[7vh] lg:text-[6vh] xd:text-[4vh] sm:text-[4vh]  m:text-[3vh]  xm:text-[3vh] md:text-[5vh]   l absolute z-1 s   text-amber-100 uppercase '>world without borders</h1>
             </div>
 
         </div>

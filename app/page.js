@@ -163,10 +163,10 @@ export default function Home() {
           </Link>
         </div>
       <div ref={circleRef} className="smallCircle pointer-events-none fixed w-3 h-3 left-20 xl:block 2xl:block lg:block md:hidden cursor-none sm:hidden xm:hidden m:hidden rounded-full bg-black z-100 top-0"></div>
-        <div ref={bigCircleRef}  className="bigCircle pointer-events-none absolute rounded-full xl:block 2xl:block lg:block md:hidden sm:hidden cursor-none xm:hidden m:hidden w-[50px] h-[50px] left-20  border-1  border-black z-49 top-0" ></div>
+        <div ref={bigCircleRef}  className="bigCircle pointer-events-none absolute  rounded-full xl:block 2xl:block lg:block md:hidden sm:hidden cursor-none xm:hidden m:hidden w-[50px] h-[50px] left-20  border-1  border-black z-49 top-0" ></div>
         
-        <div className="anima1  w-full h-[100vh] bg-black overflow-hidden fixed top-0 left-0   z-50">
-          <h1 className="travel absolute 2xl:left-32 xl:left-20  ml:left-22 left-4  uppercase 2xl:top-32 md:text-[17vh] md:top-70  md:left-25 ml:top-55 xl:top-50 top-64 xl:text-[30vh]  2xl:text-[50vh] lg:top-65 lg:left-30 lg:text-[20vh] ml:text-[25vh] xd:text-[15vh] xd:left-25 sm:text-[13vh] sm:left-18 text-[7vh]      m:text-[10vh] font-bold text-white">travel</h1>
+        <div className="anima1  w-full h-[100vh] bg-black overflow-hidden fixed top-0 left-0 flex justify-center items-center   z-50">
+          <h1 className="travel  uppercase 2xl:top-32 md:text-[17vh]  xl:text-[30vh]  2xl:text-[35vh] 3xl:text-[43vh] lg:left-30 lg:text-[20vh] ml:text-[25vh] xd:text-[15vh] xsm:text-[13vh] text-[7vh]  m:text-[10vh] font-bold text-white">travel</h1>
           <div className="w-20 h-10 absolute bottom-5 right-5 z-50  flex ">
             <div className="bar1 bg-white flex-1 h-full w-full"></div>
             <div className="bar1 bg-white flex-1 h-full w-full"></div>
@@ -174,8 +174,8 @@ export default function Home() {
             <div className="bar1 bg-white flex-1 h-full w-full"></div>
           </div>
         </div>
-        <div className="anima  w-full h-[100vh] bg-white overflow-hidden fixed top-0 left-0  z-49">
-          <h1 className="travel1 absolute 2xl:left-32 xl:left-20 ml:left-22  left-4  uppercase 2xl:top-32  xl:top-50 md:top-70  md:text-[17vh] md:left-25 ml:top-55 top-64 xl:text-[30vh] 2xl:text-[50vh] ml:text-[25vh] lg:top-65 lg:left-30 lg:text-[20vh]  xd:text-[15vh] xd:left-25 sm:text-[13vh] sm:left-18  text-[7vh]    m:text-[10vh]    font-bold">travel</h1>
+        <div className="anima  w-full h-[100vh] bg-white overflow-hidden fixed top-0 left-0 flex justify-center items-center   z-49">
+          <h1 className="travel1  uppercase   md:text-[17vh]  xl:text-[30vh] 2xl:text-[35vh] 3xl:text-[43vh] ml:text-[25vh]  lg:text-[20vh]  xd:text-[15vh]  sm:text-[13vh]   text-[7vh]    m:text-[10vh]    font-bold">travel</h1>
           <div className="w-20 h-10 absolute bottom-5 right-5 z-50  flex ">
             <div className="bar bg-black flex-1 h-full w-full"></div>
             <div className="bar bg-black flex-1 h-full w-full"></div>
