@@ -9,7 +9,16 @@ import { useMediaQuery } from 'react-responsive';
 
 const Hero = () => {
 
-   const isMobile = useMediaQuery({maxWidth : "500px"})
+     const under400 = useMediaQuery({ maxWidth: 399 });
+  const between400_500 = useMediaQuery({ minWidth: 400, maxWidth: 499 });
+  const between500_700 = useMediaQuery({ minWidth: 500, maxWidth: 699 });
+  const above700 = useMediaQuery({ minWidth: 700 });
+
+  let times = 90; // القيمة الافتراضية
+  if (under400) times = 40;
+  else if (between400_500) times = 50;
+  else if (between500_700) times = 70;
+  else if (above700) times = 90;
 
 
     useGSAP(() => {
@@ -49,14 +58,30 @@ const Hero = () => {
         })
 
 
+
+
+
         sideTimeline.to(".text1", {
-            y: isMobile ? -90 : -250  ,
+            y : 2   * times ,
             transformOrigin: "bottom center",
             ease: "power1",
             duration: 2
         })
         sideTimeline.to(".text2", {
-             y: isMobile ? 90 : 250  ,
+             y : times + 20,
+            transformOrigin: "bottom center",
+            ease: "power1",
+            duration: 2
+        }, "<")
+            sideTimeline.to(".text3", {
+             y :  -times   ,
+            transformOrigin: "bottom center",
+            ease: "power1",
+            duration: 2
+        }, "<")
+
+            sideTimeline.to(".text4", {
+             y : (-times * 2 ) + 20 ,
             transformOrigin: "bottom center",
             ease: "power1",
             duration: 2
@@ -64,18 +89,21 @@ const Hero = () => {
 
 
 
-        sideTimeline.to(".text1", {
-            x: -1300,
-            transformOrigin: "bottom center",
-            ease: "power1",
-            duration: 2
-        })
-        sideTimeline.to(".text2", {
-            x: 1300,
-            transformOrigin: "bottom center",
-            ease: "power1",
-            duration: 2
-        }, "<")
+
+        // sideTimeline.to(".text1", {
+        //     x: -1500,
+        //     transformOrigin: "bottom center",
+        //     ease: "power1",
+        //     duration: 2
+        // })
+        // sideTimeline.to(".text2", {
+        //     x: 1500,
+        //     transformOrigin: "bottom center",
+        //     ease: "power1",
+        //     duration: 2
+        // }, "<")
+
+
 
 
 

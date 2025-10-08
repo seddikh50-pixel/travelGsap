@@ -93,6 +93,21 @@ export default function Home() {
       }
     )
 
+       travelTimeline.from('.header',
+      {
+        y: "-100%",
+        ease: "circ",
+        duration: 1
+      }
+    )
+
+        travelTimeline.from('body',
+      {
+        overflow: "hidden",
+        
+      }
+    )
+
 
 
 
@@ -123,11 +138,13 @@ export default function Home() {
   return (
 
     <div id="smooth-wrapper" >
+        <Header />
          <div className='mobileMenu absolute z-100 left-full p-10 pt-20   w-full h-screen bg-white flex flex-col'>
           <div className="absolute right-5 top-5 z-50 ">
-            <RxCross2 className="text-black text-6xl" onClick={()=>{
+            <RxCross2 className="text-black text-2xl" onClick={()=>{
               gsap.to('.mobileMenu',{
-                x : "100%"
+                x : "100%",
+                ease : "power1"
               })
             }} />
 
@@ -149,7 +166,7 @@ export default function Home() {
         <div ref={bigCircleRef}  className="bigCircle pointer-events-none absolute rounded-full xl:block 2xl:block lg:block md:hidden sm:hidden cursor-none xm:hidden m:hidden w-[50px] h-[50px] left-20  border-1  border-black z-49 top-0" ></div>
         
         <div className="anima1  w-full h-[100vh] bg-black overflow-hidden fixed top-0 left-0   z-50">
-          <h1 className="travel absolute xl:left-32 left-15  uppercase xl:top-32 top-64 xl:text-[50vh] md:text-[15vh] md:left-30 md:top-100 m:text-[10vh] font-bold text-white">travel</h1>
+          <h1 className="travel absolute 2xl:left-32 xl:left-20  ml:left-22 left-4  uppercase 2xl:top-32 md:text-[17vh] md:top-70  md:left-25 ml:top-55 xl:top-50 top-64 xl:text-[30vh]  2xl:text-[50vh] lg:top-65 lg:left-30 lg:text-[20vh] ml:text-[25vh] xd:text-[15vh] xd:left-25 sm:text-[13vh] sm:left-18 text-[7vh]      m:text-[10vh] font-bold text-white">travel</h1>
           <div className="w-20 h-10 absolute bottom-5 right-5 z-50  flex ">
             <div className="bar1 bg-white flex-1 h-full w-full"></div>
             <div className="bar1 bg-white flex-1 h-full w-full"></div>
@@ -158,7 +175,7 @@ export default function Home() {
           </div>
         </div>
         <div className="anima  w-full h-[100vh] bg-white overflow-hidden fixed top-0 left-0  z-49">
-          <h1 className="travel1 absolute xl:left-32 left-15 uppercase xl:top-32 top-64 xl:text-[50vh] md:text-[15vh] md:left-30 md:top-100 m:text-[10vh]   m:text-[10vh font-bold">travel</h1>
+          <h1 className="travel1 absolute 2xl:left-32 xl:left-20 ml:left-22  left-4  uppercase 2xl:top-32  xl:top-50 md:top-70  md:text-[17vh] md:left-25 ml:top-55 top-64 xl:text-[30vh] 2xl:text-[50vh] ml:text-[25vh] lg:top-65 lg:left-30 lg:text-[20vh]  xd:text-[15vh] xd:left-25 sm:text-[13vh] sm:left-18  text-[7vh]    m:text-[10vh]    font-bold">travel</h1>
           <div className="w-20 h-10 absolute bottom-5 right-5 z-50  flex ">
             <div className="bar bg-black flex-1 h-full w-full"></div>
             <div className="bar bg-black flex-1 h-full w-full"></div>
@@ -168,7 +185,7 @@ export default function Home() {
         </div>
 
       <div id="smooth-content" className="w-screen relative  " >
-          <Header />
+        
         <Hero />
         <Borders />
         <Images />
