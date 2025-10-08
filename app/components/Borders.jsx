@@ -82,7 +82,8 @@ const Borders = () => {
             }
         });
 
-        borderTimeline.to('.singleImage', {
+        if(isMobile){
+            borderTimeline.to('.singleImage', {
             transform: "translateZ(0px)",
 
             transformOrigin: "left center",
@@ -91,6 +92,7 @@ const Borders = () => {
 
         })
 
+        }
 
         if (!isMobile) {
             borderTimeline.from('.travelImage', {
