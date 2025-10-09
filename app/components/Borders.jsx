@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,7 +17,7 @@ const Borders = () => {
 
 
     const [isMobile, setIsMobile] = useState(false);
-
+    const piecesRef = useRef([]);
 
     const travels = ["/travels/travel1.webp", "/travels/travel2.webp", "/travels/travel3.webp", "/travels/travel4.webp", "/travels/travel5.webp"]
 
@@ -31,7 +31,7 @@ const Borders = () => {
                 transformOrigin: "left center",
                 duration: 1,
                 ease: "power1",
-                onComplete : ()=> console.log("com")
+                onComplete: () => console.log("com")
 
             })
 
@@ -57,13 +57,13 @@ const Borders = () => {
 
             }
         })
-       
 
-        borderTimeline.to('.logo',{
-            color : "black",
-            ease : "power1"
+
+        borderTimeline.to('.logo', {
+            color: "black",
+            ease: "power1"
         })
-       
+
 
 
         gsap.from(splitBorder.chars, {
@@ -82,30 +82,26 @@ const Borders = () => {
             }
         });
 
-        if(isMobile){
+        if (isMobile) {
             borderTimeline.to('.singleImage', {
-            transform: "translateZ(0px)",
+                transform: "translateZ(0px)",
 
-            transformOrigin: "left center",
-            duration: 1,
-            ease: "power1",
-
-        })
-
-        }
-
-        if (!isMobile) {
-            borderTimeline.from('.travelImage', {
-                transform: "translateZ(-2000px)",
-                rotateY: 45,
                 transformOrigin: "left center",
                 duration: 1,
                 ease: "power1",
-                stagger: 0.3,
 
             })
 
         }
+
+      
+
+
+        borderTimeline.from(piecesRef.current, {
+            transform: "translateZ(-1999px) rotateY(45deg)",
+            transformOrigin: "left center",
+            stagger: 0.3,
+        });
 
 
 
@@ -115,32 +111,39 @@ const Borders = () => {
 
     })
     return (
-        <div className='borderContainer h-screen w-screen flex justify-center items-center '>
+        <div className='borderContainer relative h-screen w-screen flex justify-center items-center '>
 
             <div className='travels absolute  w-full h-full flex' >
+            
 
-                {
-                    isMobile ?
-                        <div className=' relative h-full w-full' style={{ perspective: "2000px" }}>
-                            <Image src={"/yellowCar.webp"} fill className="singleImage  object-cover" alt='car' />
-                        </div>
-                        :
-                        travels.map((img, index) => (
-                            <div key={index} className='relative flex-1 w-full h-full' style={{ perspective: "2000px" }}>
-                                <Image
 
-                                    src={img}
-                                    alt={`travel ${index + 1}`}
-                                    fill
-                                    sizes="(max-width: 768px) 100vw, 20vw"
-                                    className="travelImage object-cover"
-                                />
-                            </div>
-                        ))
-                }
+                <div className="image-row flex w-screen h-screen overflow-hidden rounded-none" style={{ perspective: "2000px" }}>
+                    {[0, 1, 2, 3].map((i,index) => (
+                        <div
+                            key={i}
+                            ref={(el) => {
+                                if (el) piecesRef.current[i] = el;
+                            }}
+                            className="flex-1"
+                            style={{
+                                zIndex : `${4 - index}`,
+                                backgroundImage: "url('/yellowCar.webp')",
+                                backgroundSize: "400% 100%", // الصورة مقسومة 4 أعمدة
+                                backgroundPosition: [
+                                    "0% 0%",     // العمود الأول
+                                    "33.33% 0%", // العمود الثاني
+                                    "66.66% 0%", // العمود الثالث
+                                    "100% 0%",   // العمود الرابع
+                                ][i],
+                                width: "25%",   // كل عمود ربع الشاشة
+                                height: "100%", // طول الشاشة كامل
+                            }}
+                        />
+                    ))}
+                </div>
             </div>
             <div className=''>
-              
+
                 <h1 className='borders  -translate-x-1/2 -translate-y-full whitespace-nowrap text-shadow-lg/30 text-shadow-black xl:text-[8vh] ml:text-[7vh] lg:text-[6vh] xd:text-[4vh] sm:text-[4vh]  m:text-[3vh]  xm:text-[3vh] md:text-[5vh]   l absolute z-1 s   text-amber-100 uppercase '>world without borders</h1>
             </div>
 
