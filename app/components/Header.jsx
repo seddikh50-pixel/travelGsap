@@ -24,22 +24,22 @@ const Header = () => {
             </div>
           
             <div className='text-2xl xl:flex lg:hidden 2xl:flex md:hidden sm:hidden ml:hidden  xm:hidden m:hidden gap-7 bg-white  border-2 '>
-                <Link href={"/"} className='link group relative text-black bg-white overflow-hidden  '>
+                <Link href={"/"} className='link group cursor-none relative text-black bg-white overflow-hidden  '>
 
                     <span className='block left-0 top-0 group-hover:-translate-y-15 transition-all duration-500 px-5 py-3 '>Work</span>
                     <span className='absolute left-0 top-10 group-hover:-translate-y-10 transition-all duration-500 px-5 py-3 '>Work</span>
                 </Link>
-                <Link href={"/"} className='link group relative text-black bg-white overflow-hidden  '>
+                <Link href={"/"} className='link group relative cursor-none text-black bg-white overflow-hidden  '>
 
                     <span className='block left-0 top-0 group-hover:-translate-y-15 transition-all duration-500 px-5 py-3 '>Agency</span>
                     <span className='absolute left-0 top-10 group-hover:-translate-y-10 transition-all duration-500 px-5 py-3 ' >Agency</span>
                 </Link>
-                <Link href={"/"} className='link group relative text-black bg-white overflow-hidden  '>
+                <Link href={"/"} className='link group relative cursor-none text-black bg-white overflow-hidden  '>
 
                     <span className='block left-0 top-0 group-hover:-translate-y-15 transition-all duration-500 px-5 py-3 '>Services</span>
                     <span className='absolute left-0 top-10 group-hover:-translate-y-10 transition-all duration-500 px-5 py-3 '>Services</span>
                 </Link>
-                <Link href={"/"} className='link group relative text-black bg-white overflow-hidden  '>
+                <Link href={"/"} className='link group relative cursor-none text-black bg-white overflow-hidden  '>
 
                     <span className='block left-0 top-0 group-hover:-translate-y-10 transition-all duration-500   bg-black px-5 py-3 text-white   '>Let's Talk</span>
                     <span className='absolute left-0 top-10 group-hover:-translate-y-10 transition-all  duration-500 bg-black       text-white px-5 py-3'>Let's Talk</span>
