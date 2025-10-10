@@ -18,7 +18,7 @@ const Hero = () => {
   if (under400) times = 40;
   else if (between400_500) times = 50;
   else if (between500_700) times = 70;
-  else if (above700) times = 90;
+  else if (above700) times = 120;
 
 
     useGSAP(() => {
