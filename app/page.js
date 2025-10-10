@@ -12,6 +12,7 @@ import { useEffect, useRef, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 import Header from "./components/Header";
+import Advice from "./components/Advice";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 
@@ -56,6 +57,7 @@ export default function Home() {
     });
 
     const splitTravel = SplitText.create('.travel', { type: "chars" })
+
 
     const travelTimeline = gsap.timeline({})
 
@@ -189,8 +191,7 @@ export default function Home() {
         <Hero />
         <Borders />
         <Images />
-        <div className="w-full h-screen bg-amber-400 flex justify-center items-center">
-        </div>
+       <Advice/>
       </div>
     </div>
 

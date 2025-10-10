@@ -69,7 +69,7 @@ const Images = () => {
     })
     return (
         <div className='islandContainer w-full h-screen '>
-            <h1 className='islandText text-center z-1 xl:text-[14vh] translate-y-30 2xl:text-[16vh]  ml:text-[10vh] lg:text-[6vh] xd:text-[6vh] sm:text-[5vh]  m:text-[4vh]  xm:text-[4vh] md:text-[7vh]      text-black'>Visit Maldives</h1>
+            <h1 className='islandText text-center z-1 xl:text-[14vh] translate-y-30 2xl:text-[16vh]  ml:text-[10vh] lg:text-[6vh] xd:text-[6vh] sm:text-[5vh]  m:text-[4vh]  xm:text-[4vh] md:text-[7vh]      text-black'>Around The World</h1>
             <div className='relative translate-y-20 w-full h-3/5 flex xl:flex-row justify-evenly items-center gap-4 px-5'>
                     <div className='thirdOne absolute xl:h-100 xl:w-120 m:w-64 m:h-64 xm:w-72 xm:h-72 sm:w-82 sm:h-82 md:w-96 md:h-96  lg:w-120 lg:h-100   z-20 bottom-20 shadow-xl/40 rounded-t-2xl overflow-hidden'>
                         <Image   sizes="(max-width: 768px) 100vw, 
